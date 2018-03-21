@@ -29,18 +29,18 @@ end
 function playerMeta:setSafeStatus(status)
 	self:setNetVar("isSafe", status)
 end
-
+/*
 if (CLIENT) then
 	function PLUGIN:HUDPaint()
 		if LocalPlayer():getSafeStatus() then
-			local Texture1 = Material("stalker/ui/hud_safe.png") 
+			local Texture1 = Material("stalker/ui/hud_safe.png") --This is setup to draw a 32x32 icon on the HUD if you're safe
 			surface.SetMaterial(Texture1)
 			surface.SetDrawColor(Color(116, 195, 101, 255))
 			surface.DrawTexturedRect(ScrW()-48, ScrH()-189, 32, 32, Color(0, 255, 0, 255))
 		end
 	end
 else
-
+*/
 function PLUGIN:PlayerLoadedChar(client, character, lastChar)
 		client:setSafeStatus(false)
 		client:setNetVar("safeTick", CurTime() + 5)
