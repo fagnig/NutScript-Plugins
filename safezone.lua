@@ -45,34 +45,19 @@ function PLUGIN:PlayerLoadedChar(client, character, lastChar)
 		client:setSafeStatus(false)
 		client:setNetVar("safeTick", CurTime() + 5)
 end
-/*
-function PLUGIN:PlayerTick(client)
-	if client:getChar():getArea() ~= nil then
-		if !client:getChar():getData("isSafe") then
-			if client:getChar():getData("safeTick") > CurTime() then
-				client:getChar():setData("isSafe", true)
-			end
-		end
-	else
-		client:getChar():setData("isSafe", false)
-	end
-end
-*/
 function PLUGIN:OnPlayerAreaChanged(client, areaID)
 	if client:getArea() then
 		client:setNetVar("safeTick", CurTime() + 5)
 	end
 end
 
-/*
-function PLUGIN:EntityTakeDamage(entity, dmgInfo)
-	if (IsValid(entity.nutPlayer)) then
-		if entity:getSafeStatus() then
-			dmgInfo:SetDamage(0)
-		end
+function PLUGIN:ScalePlayerDamage(client, hitGroup, dmgInfo)
+	if client:getSafeStatus() then
+		dmgInfo:ScaleDamage(0)
 	end
 end
-*/
+
+
 local thinkTime = CurTime()
 local funny = 0
 function PLUGIN:Think()
