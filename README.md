@@ -13,6 +13,8 @@ Lets you hide items on the map via /stashhide & /stashunhide
 # redownloadlightmaps
 A simple plugin for when you have day/night cycles on your server and all the props look awful and fullbright.
 Don't set the delay too low, as this is a pretty expensive process and will cause the game to stutter on larger maps.
+# revive
+A downed&revive system
 # safezone
 Makes *ALL* areas safezones, making you invulnerable inside.
 # setdata
